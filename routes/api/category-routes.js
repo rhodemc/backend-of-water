@@ -5,24 +5,27 @@ const { Category, Product } = require("../../models");
 
 // find all categories
 router.get("/", async (req, res) => {
-  const categoryData = await Category.findAll({
-    include: [{ model: Product }],
-  });
-  return res.json(categoryData);
+  try {
+    const categoryData = await Category.findAll({
+      include: [{ model: Product }],
+    });
+    return res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // find one category by its `id` value with associated products
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    Category.findOne({
-      where: { id: req.params.id },
+    const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
     if (!categoryData) {
       res.status(404).json({ message: "No category found with this id!" });
       return;
     }
-    res.status(200).json(categoryData);
+    return res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -65,7 +68,7 @@ router.delete("/:id", async (req, res) => {
       res.status(404).json({ message: "No category found with this id!" });
       return;
     }
-    res.status(200).json(categoryData);
+    res.status(200).json({ categoryData, message: "Category deleted!" });
   } catch (err) {
     res.status(500).json(err);
   }
