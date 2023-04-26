@@ -25,9 +25,9 @@ Once necessary dependencies are installed, run 'npm start' in your command termi
 
 Future updates will include a kickass front-end and messages in Insomnia confirming the success of each request.
 
-![Backend of Water - An ORM ECommerce Backend](/assets/images/backend-of-water.png)
+![Backend of Water - An ORM ECommerce Backend](/public/images/backend-of-water.png)
 
-[This is an external link to the 'Backend of Water' usage video]()
+[This is an external link to the 'Backend of Water' usage video](https://drive.google.com/file/d/1XX58Ghr7nyW9Ha-7f8trsdNZWvv1L_rQ/view)
 
 ## Credits
 
