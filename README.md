@@ -31,7 +31,9 @@ Future updates will include a kickass front-end and messages in Insomnia confirm
 
 ## Credits
 
-N/A
+Backend of Water was built with starter coded provided by Xandromus and the University of Oregon Coding Bootcamp.
+
+[This is an external link to the starter code repository](https://github.com/coding-boot-camp/fantastic-umbrella)
 
 ## License
 
